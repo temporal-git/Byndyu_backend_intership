@@ -16,11 +16,19 @@ def sum_of_two_min_elements(arr):
 
 
 class TestSumOfTwoMinElements:
-    def test_valid_input(self):
+    def test_valid_int_input(self):
         arr = [4, 0, 3, 19, 492, -10, 1]
         assert sum_of_two_min_elements(arr) == -10
 
-    @pytest.mark.parametrize('array', [[4, 0, "b", 19, 492, -10, 1], ["z", "b", "c"], [4, "0"]])
+    def test_valid_float_input(self):
+        arr = [4.0, 0.0, 3.0, 19.0, 492.0, -10.0, 1.0]
+        assert sum_of_two_min_elements(arr) == -10.0
+
+    def test_valid_mixed_input(self):
+        arr = [4, 0.0, 3, 19.0, 492, -10, 1]
+        assert sum_of_two_min_elements(arr) == -10.0
+
+    @pytest.mark.parametrize('array', [[4, 0, "b", 19, 492.0, -10, 1], ["z", "b", "c"], [4, "0"]])
     def test_non_numeric_elements(self, array):
         arr = array
         assert sum_of_two_min_elements(arr) == "Массив должен содержать только числовые элементы"

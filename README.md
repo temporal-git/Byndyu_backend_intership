@@ -26,8 +26,8 @@ __HINT:__ учти, что массив может быть пустым, или
 ### 3. Сравнение скорости обоих функций
 + С замером времени через perf_counter
 + Тестовые данные на 1 и 100 миллионов строк
-+ gen_arr_1m.txt https://disk.yandex.ru/d/LAxoJ5pAlJ4Y_Q
-+ gen_arr_100m.txt https://disk.yandex.ru/d/Xhn4kg1rwpCW1w
++ gen_arr_100m.txt https://disk.yandex.ru/d/LAxoJ5pAlJ4Y_Q
++ gen_arr_1m.txt https://disk.yandex.ru/d/Xhn4kg1rwpCW1w
 /performance/mass_sort_perf_counter.py
 
 ### 4. Дополнительный код, который использовался для генерации данных
