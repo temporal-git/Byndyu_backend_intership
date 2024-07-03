@@ -1,17 +1,15 @@
 import time
-# from data.py_arr import digi_list
-
 
 # importing list of variables from .py file with 1000 units, can be easy added non digit symbols
-# code bellow for importing 100 million lines fi le with digits. "gen_arr_1m.txt" for 1 mil
+# from data.py_arr import digi_list
 
-# with open('gen_arr_100m.txt', 'r') as file:
+# code bellow for importing 100 million lines fi le with digits. "gen_arr_1m.txt" for 1 mil
+# with open('../data/gen_arr_1m.txt', 'r') as file:
 #     digi_list = [int(x) for x in file.read().splitlines()]
 
 
 # importing mixed int + float numbers
-
-with open('int_float_array.txt', 'r') as file:
+with open('../data/int_float_array.txt', 'r') as file:
     digi_list = []
     for line in file:
         line = line.strip()

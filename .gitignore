@@ -26,6 +26,6 @@ venv/
 *.iml
 
 misk/
-/performance/gen_arr_100m.txt
+/data/gen_arr_100m.txt
 
-/performance/gen_arr_1m.txt
+/data/gen_arr_1m.txt

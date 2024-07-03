@@ -6,5 +6,4 @@ for j in range(1000):
     num.append(value)
 
 for i in num:
-    open('../performance/gen_arr.txt', 'w').write(str(i) + '\n ')
-
+    open('../data/gen_arr.txt', 'w').write(str(i) + '\n ')
