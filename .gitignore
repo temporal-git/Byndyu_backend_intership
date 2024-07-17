@@ -29,3 +29,5 @@ misk/
 /data/gen_arr_100m.txt
 
 /data/gen_arr_1m.txt
+/lowlevel/build/
+/lowlevel/mass_sort_cython.c

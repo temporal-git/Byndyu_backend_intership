@@ -1,9 +1,9 @@
 def sum_of_two_min_elements(arr):
     if len(arr) < 2:
-        raise ValueError("Массив должен содержать хотя бы два элемента")
+        return "Массив должен содержать хотя бы два элемента"
     else:
         if not all(isinstance(e, (int, float)) for e in arr):
-            raise ValueError("Массив должен содержать только числовые элементы")
+            return "Массив должен содержать только числовые элементы"
         else:
             if arr[0] < arr[1]:
                 min1 = arr[0]
