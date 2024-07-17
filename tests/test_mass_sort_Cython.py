@@ -14,7 +14,7 @@ class TestSumOfTwoMinElementsMinFunction:
         assert mass_sort_cython.sum_of_two_min_elements_min(arr) == -10
 
     # позитивные проверки с числами с плавающей точкой
-    @pytest.mark.parametrize('array', [[4.0, 0.0, 3.0, 19.0, 492.0, -10.0, 1.0], [4, 0.0, 3, 19.0, 492, -10, 1]])
+    @pytest.mark.parametrize('array', [[4.2, 0.0, 3.6, 19.0, 492.0, -10.0, 1.0], [4, 0.0, 3, 19.0, 492, -10, 1]])
     def test_valid_float_input(self, array):
         arr = array
         result = mass_sort_cython.sum_of_two_min_elements_min(arr)

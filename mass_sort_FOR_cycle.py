@@ -1,4 +1,4 @@
-def sum_of_two_min_elements(arr):
+def sum_of_two_min_elements_for(arr):
     if len(arr) < 2:
         return "Массив должен содержать хотя бы два элемента"
     else:
