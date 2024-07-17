@@ -20,8 +20,7 @@ __HINT:__ учти, что массив может быть пустым, или
 /tests/test_mass_sort_FOR.py
 
 ### 2. Код через функцию min() 
-+ короче код через встроенную python функцию MIN(), она лучше оптимизирована и
-+ выполняется быстрее на 10-20% чем for, несмотря на то, что массив проходится 2 раза
++ короче код через встроенную python функцию MIN(), она лучше оптимизирована и выполняется быстрее чем for
 + юнит тесты с параметризацией, для большего покрытия граничных значений
 
 /mass_sort_MIN_function.py
@@ -41,14 +40,21 @@ python setup.py build_ext --inplace
 /lowlevel/setup.py
 /lowlevel/mass_sort_cython.pyx
 
-### 4. Сравнение скорости обоих функций
+### 4. Сравнение скорости работы функций
 + С замером времени через функцию time
 + Тестовые данные на 1 и 100 миллионов строк
 + gen_arr_100m.txt https://disk.yandex.ru/d/LAxoJ5pAlJ4Y_Q
 + gen_arr_1m.txt https://disk.yandex.ru/d/Xhn4kg1rwpCW1w
 
-/performance/mass_sort_cython_counter.py
-/performance/mass_sort_python_counter.py
+```
+100 mil array:
+Python FOR time: 11.693257808685303
+Python MIN time: 8.16281533241272
+Cython FOR time: 2.090334415435791
+Cython MIN time: 1.8770391941070557
+```
+
+/performance/mass_sort_test_perf.py
 
 ### 5. Дополнительный код, который использовался для генерации данных
 /generators/gen_arr_python_file.py
@@ -58,6 +64,9 @@ python setup.py build_ext --inplace
 
 ### 6. Environment:
 development IDE Pycharm
+
+python version 3.11
+
 For other development environments there may be differences with relative file imports.
 
 It can help for imports in VScode:
