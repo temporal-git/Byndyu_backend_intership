@@ -11,6 +11,7 @@ cpdef sum_of_two_min_elements_min(arr):
         min1 = min(arr)
         arr.remove(min1)
         min2 = min(arr)
+        arr.append(min1)
         return min1 + min2
 
 
