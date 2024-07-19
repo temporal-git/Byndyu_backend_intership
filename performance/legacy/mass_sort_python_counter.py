@@ -4,19 +4,19 @@ import time
 # from data.py_arr import digi_list
 
 # code bellow for importing 100 million lines file with digits. "gen_arr_1m.txt" for 1 mil or "gen_arr_100m.txt"
-with open('../data/gen_arr_1m.txt', 'r') as file:
-    digi_list = [int(x) for x in file.read().splitlines()]
+# with open('../data/gen_arr_1m.txt', 'r') as file:
+#     digi_list = [int(x) for x in file.read().splitlines()]
 
 
 # importing mixed int + float numbers
-# with open('../data/int_float_array.txt', 'r') as file:
-#     digi_list = []
-#     for line in file:
-#         line = line.strip()
-#         if '.' in line:
-#             digi_list.append(float(line))
-#         else:
-#             digi_list.append(int(line))
+with open('../../data/int_float_array.txt', 'r') as file:
+    digi_list = []
+    for line in file:
+        line = line.strip()
+        if '.' in line:
+            digi_list.append(float(line))
+        else:
+            digi_list.append(int(line))
 
 
 def sum_of_two_min_elements_1(arr):
@@ -64,5 +64,6 @@ print(sum_of_two_min_elements_2(digi_list))
 end2 = time.time()
 cy_time2 = end2 - start2
 
+print("time:")
 print(cy_time)
 print(cy_time2)

@@ -1,7 +1,7 @@
 from lowlevel import mass_sort_cython as msc
 import time
 
-with open('../data/gen_arr_1m.txt', 'r') as file:
+with open('../../data/gen_arr_1m.txt', 'r') as file:
     digi_list = [int(x) for x in file.read().splitlines()]
 
 
