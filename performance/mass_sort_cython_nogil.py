@@ -1,8 +1,4 @@
 import time
-import mass_sort_for_cycle as msfc
-import mass_sort_min_function as msmf
-from lowlevel import mass_sort_cython as msc
-from data.py_arr import digi_list
 from nogil import nogil as ng
 import numpy as np
 
@@ -13,7 +9,7 @@ def time_of_function(function):
         result = function(*args)
         end_time = time.time()
         func_time = end_time - start_time
-        return float(result), f'Time: {func_time}'
+        return result, f'Time: {func_time}'
     return wrapped
 
 
@@ -24,6 +20,7 @@ def open_list(option: str = "1m"):
     if option == "1m":
         with open('../data/gen_arr_1m.txt', 'r') as file:
             arr = [int(x) for x in file.read().splitlines()]
+
     elif option == "100m":
         with open('../data/gen_arr_100m.txt', 'r') as file:
             arr = [int(x) for x in file.read().splitlines()]
@@ -38,29 +35,21 @@ def open_list(option: str = "1m"):
                     arr.append(float(line))
                 else:
                     arr.append(int(line))
-
-    # importing list of variables from .py file with 1000 units, can be easy added non digit symbols
-    elif option == "1000":
-        arr = digi_list
     load_end = time.time()
     load_time = load_end - load_start
     print(f'Load file time: {load_time} \n')
-
     return arr
 
 
-# Options for choosing file length : "1m", "100m", "1000", "mixed"
-open_list("100m")
-
-decorated_python_for = time_of_function(msfc.sum_of_two_min_elements_for)
-decorated_python_min = time_of_function(msmf.sum_of_two_min_elements_min)
-decorated_cython_for = time_of_function(msc.sum_of_two_min_elements_for)
-decorated_cython_min = time_of_function(msc.sum_of_two_min_elements_min)
+# Options for choosing file length : "1m", "100m", "mixed"
+open_list("1m")
 decorated_cython_nogil = time_of_function(ng.sum_of_two_min_elements_min)
-
-print(f'Result Python FOR:   {decorated_python_for(arr)}')
-print(f'Result Python MIN:   {decorated_python_min(arr)}')
-print(f'Result Cython FOR:   {decorated_cython_for(arr)}')
-print(f'Result Cython MIN:   {decorated_cython_min(arr)}')
 arr = np.array(arr, dtype=np.float64)
-print(f'Result Cython Nogil: {decorated_cython_nogil(arr, len(arr))}')
+
+print(f'Result Cython MIN: {decorated_cython_nogil(arr, len(arr))}')
+
+result = ng.sum_of_two_min_elements_min(arr, len(arr))
+if result == float('inf'):
+    print("Массив должен содержать хотя бы два элемента")
+else:
+    print(f"Сумма двух минимальных элементов: {result}")

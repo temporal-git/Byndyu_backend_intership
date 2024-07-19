@@ -31,4 +31,5 @@ misk/
 /data/gen_arr_1m.txt
 /lowlevel/build/
 /lowlevel/mass_sort_cython.c
-/performance/legacy/
+/nogil/build/
+/nogil/nogil.c
